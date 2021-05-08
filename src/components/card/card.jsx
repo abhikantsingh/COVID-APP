@@ -2,17 +2,31 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./card.css";
 import CountUp from 'react-countup';
+import {fetchCountries} from "../../api";
 
-const Card = () =>
+const Card = ({country}) =>
 {
     const [data,setData]=useState(null);
     const [date,setDate]=useState(null);
     const [reacovered,setRecovered]=useState(null);
     const [death,setDeath]=useState(null);
+  
+
 
     useEffect(async () =>
     {
-        const response=await fetch("https://covid19.mathdro.id/api");
+        console.log(country);
+     
+      const url='https://covid19.mathdro.id/api';
+        let response = await fetch(url);
+        
+        if(country)
+       {
+           
+           response=await fetch(`${url}/countries/${country.country}`)
+       }
+      
+       
         const data=await response.json();
         const confCase=data.confirmed.value;
         const confDate=data.lastUpdate;
@@ -22,7 +36,11 @@ const Card = () =>
         setDate(confDate);
         setRecovered(Recovered);
         setDeath(confDeath);
-    },[]);
+      
+
+    },[country]);
+
+   
     return (
         <div>
        

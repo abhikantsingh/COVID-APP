@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./country.css";
+import {fetchCountries} from "../../api";
 
-const Input = () =>
+
+const Input = ({handelChanges}) =>
 {
-    const [dataInput,setData]=useState("");
+   
+    const [fetchedCountries,setFetchCountries]=useState([]);
+    useEffect(() => {
+        const fetchAPI = async () =>
+        {
+            setFetchCountries(await fetchCountries());
+        }
+       fetchAPI();
+    },[setFetchCountries]);
 
+
+  
     return (
-        <div className="input" style={{border:"none"}}>
-            <input placeholder="COUNTRY NAME" value=""></input>
-            <button></button>
-            <h3>{dataInput}</h3>
+        <div className="input">
+         <select id="country" onChange={(event) => handelChanges(event.target.value)}>
+         <option value="global">Global</option>
+         {
+            fetchedCountries.map((country,i) => 
+                <option style={{color:"black"}} key={i} value={country}>{country}</option>)
+        }
+         </select>
         </div>
-        
     )
 }
 
