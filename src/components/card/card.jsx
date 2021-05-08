@@ -45,8 +45,8 @@ const Card = ({country}) =>
         <div>
        
         <div className="card">
-            <div style={{textAlign:"center"}}>
-                <h1>Infected</h1>
+            <div className="infected" style={{textAlign:"center",borderRadius:"10px", boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",margin:"0 10px 0 10px",backgroundColor:"rgba(0, 0, 255,0.5)"}}>
+                <h1 style={{fontStyle:"Poppins"}}>Infected</h1>
             </div>
           <div style={{paddingLeft:"10px"}}>
              <CountUp
@@ -64,7 +64,7 @@ const Card = ({country}) =>
          </h4>
       </div>
       <div className="card2">
-          <div style={{textAlign:"center"}}>
+          <div className="recovered"style={{textAlign:"center",borderRadius:"10px", boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",margin:"0 10px 0 10px",backgroundColor:"rgba(0, 255, 0,0.5)"}}>
           <h1>Recovered</h1>
           </div>
       <div style={{paddingLeft:"10px"}}>
@@ -85,7 +85,7 @@ const Card = ({country}) =>
   </div>
   </div>
   <div className="card3">
-      <div style={{textAlign:"center"}}>
+      <div className="deaths" style={{textAlign:"center",borderRadius:"10px", boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",margin:"0 10px 0 10px",backgroundColor:"rgba(255, 0, 0,0.5)"}}>
           <h1>Deaths</h1>
       </div>
   <div style={{paddingLeft:"10px"}}>
