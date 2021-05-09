@@ -19,7 +19,7 @@ const Input = ({handelChanges}) =>
   
     return (
       
-         <select className="input"style={{width:"400px",border:"0px",backgroundColor:" #ebebeb",outline:"0px"}} onChange={(event) => handelChanges(event.target.value)}>
+         <select className="input" style={{width:"400px",border:"0px",backgroundColor:" #ebebeb",outline:"0px"}} onChange={(event) => handelChanges(event.target.value)}>
          <option value="global">Global</option>
          {
             fetchedCountries.map((country,i) => 

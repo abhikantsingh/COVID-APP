@@ -1,6 +1,7 @@
 .main_nav{
    padding-left: 30px;
    padding-right: 100px;
+   background-image: url(../../images/2.jpeg);
 }
 
 .image{
@@ -13,7 +14,8 @@
 .content{
   width: 250px; 
   height: 50px; 
-  display: inline-block;
+  overflow: auto; 
+  width: auto; 
   position: absolute;
   left:950px;
   top:25px;
@@ -21,11 +23,22 @@
 .home{
    display:inline-block;
     padding-right: 30px;
+    font-family: poppins;
+    float: left;  
+    color:lightslategrey
 }
 .about{
-   display: inline-block;
+   
    padding-right: 30px;
+   font-family: poppins;
+   float: left;  
+   color:lightslategrey;
+   text-decoration: aliceblue;
 }
 .contact{
    display: inline-block;
+   font-family: poppins;
+   float: left;  
+   color:lightslategrey;
+   
 }

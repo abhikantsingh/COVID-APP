@@ -18,14 +18,10 @@ const Card = ({country}) =>
         console.log(country);
      
       const url='https://covid19.mathdro.id/api';
-        let response = await fetch(url);
-        
-        if(country)
-       {
-           
-           response=await fetch(`${url}/countries/${country.country}`)
-       }
-      
+        let response ;
+        {country ? response=await fetch(`${url}/countries/${country.country}`) : response = await fetch(url);
+    }
+       
        
         const data=await response.json();
         const confCase=data.confirmed.value;
@@ -36,7 +32,7 @@ const Card = ({country}) =>
         setDate(confDate);
         setRecovered(Recovered);
         setDeath(confDeath);
-      
+      console.log(data);
 
     },[country]);
 
@@ -53,7 +49,7 @@ const Card = ({country}) =>
              start={0}
              end={data}
              duration={2.5}
-             seperator=","
+             separator=","
              ></CountUp>
           </div>
           <div style={{paddingLeft:"10px"}}>
@@ -72,7 +68,7 @@ const Card = ({country}) =>
              start={0}
              end={reacovered}
              duration={2.5}
-             seperator=","
+             separator=","
              ></CountUp>
       </div>
       <div style={{paddingLeft:"10px"}}>
@@ -93,7 +89,7 @@ const Card = ({country}) =>
              start={0}
              end={death}
              duration={2.5}
-             seperator=","
+             separator=","
              ></CountUp>
   </div>
   <div style={{paddingLeft:"10px"}}>

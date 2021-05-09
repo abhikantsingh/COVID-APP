@@ -92,8 +92,9 @@ const Graph = ({country}) =>
     
     return (
       <div className="chart">
-  {country ? barChart:lineChart}
-      </div>
+  {country ? barChart : lineChart}
+  
+       </div>
     )
         }
 
